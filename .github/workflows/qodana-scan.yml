@@ -17,10 +17,6 @@ jobs:
         uses: joaofouyer/qodana-action@0.6.0
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
-        with:
-          pr-mode: false
-          args: --apply-fixes
-          push-fixes: branch
       - name: 'Generate Badge'
         uses: joaofouyer/qodana-action-badge@0.4.0
         env:

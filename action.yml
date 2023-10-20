@@ -5,6 +5,10 @@ branding:
   icon: award
   color: purple
 inputs:
+  qodana-output:
+    description: 'The output from Qodana Scan. {{ steps.qodana_scan.outputs.summary }}'
+    required: false
+    default: 'false'
   generate-coverage:
     description: 'Generate Test Coverage Badge'
     required: false

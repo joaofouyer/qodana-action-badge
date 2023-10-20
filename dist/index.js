@@ -29778,14 +29778,14 @@ const core = __importStar(__nccwpck_require__(2810));
 const github = __importStar(__nccwpck_require__(4176));
 async function run() {
     try {
-        const generateCoverage = core.getBooleanInput('generate-coverage');
-        const generateQuality = core.getBooleanInput('generate-quality');
-        const generateQodanaButton = core.getBooleanInput('generate-qodana-button');
+        const output = core.getInput('qodana-output');
+        const generateCoverage = core.getInput('generate-coverage').toLowerCase() === 'true';
+        const generateQuality = core.getInput('generate-quality').toLowerCase() === 'true';
+        const generateQodanaButton = core.getInput('generate-qodana-button').toLowerCase() === 'true';
         console.log(`Coverage: ${generateCoverage}`);
         console.log(`Quality: ${generateQuality}`);
         console.log(`Button: ${generateQodanaButton}`);
-        const summary = process.env.INPUT_QODANA_SCAN_OUTPUT_SUMMARY;
-        console.log(`The output from the source action is ${summary}`);
+        console.log(`The output from the source action is ${output}`);
         const payload = JSON.stringify(github.context.payload, undefined, 2);
         console.log(`The event payload: ${payload}`);
     }

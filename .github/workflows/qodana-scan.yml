@@ -1,0 +1,30 @@
+name: Qodana Code Coverage & Quality
+on:
+  push:
+    branches:
+      - main
+jobs:
+  qodana_coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}  # to check out the actual pull request commit, not the merge commit
+          fetch-depth: 0
+      - name: 'Qodana Scan'
+        id: qodana_scan
+        uses: joaofouyer/qodana-action@0.6.0
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        with:
+          pr-mode: false
+          args: --apply-fixes
+          push-fixes: branch
+      - name: 'Generate Badge'
+        uses: joaofouyer/qodana-action-badge@0.4.0
+        env:
+          qodana-output: ${{ steps.qodana_scan.outputs.summary }}
+          generate-coverage: 'true'
+          generate-quality: 'true'
+          generate-qodana-button: 'false'

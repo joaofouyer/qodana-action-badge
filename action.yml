@@ -1,0 +1,19 @@
+name: 'Qodana Scan Badge'
+description: 'Automatically generate quality and coverage badges for your repository.'
+author: "João Fouyer"
+inputs:
+  generate-coverage:
+    description: 'Generate Test Coverage Badge'
+    required: false
+    default: 'false'
+  generate-quality:
+    description: 'Generate Code Quality Badge'
+    required: false
+    default: 'false'
+  generate-qodana-button:
+    description: 'Generate a button to Qodana Report with link'
+    required: false
+    default: 'false'
+runs:
+  using: 'node20'
+  main: 'index.js'

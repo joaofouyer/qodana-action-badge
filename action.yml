@@ -1,6 +1,9 @@
 name: 'Qodana Scan Badge'
 description: 'Automatically generate quality and coverage badges for your repository.'
 author: "João Fouyer"
+branding:
+  icon: award
+  color: purple
 inputs:
   generate-coverage:
     description: 'Generate Test Coverage Badge'

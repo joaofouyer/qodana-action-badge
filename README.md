@@ -1,5 +1,5 @@
+[<img src="https://raw.githubusercontent.com/joaofouyer/qodana-action-badge/main/dist/qodana-button.svg" align="right" width="180" alt="Link to Qodana Report" id="qodana-button">](https://qodana.cloud/projects/zEXxj/reports/84Nk2)
 # Qodana Scan Badge
-
 This action creates coverage and code quality badges from a [Qodana Scan Action](https://github.com/marketplace/actions/qodana-scan) output and updates your README.
 
 ## Inputs

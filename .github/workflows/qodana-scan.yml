@@ -22,7 +22,7 @@ jobs:
         with:
           qodana-output: ${{ steps.qodana_scan.outputs.summary }}
           generate-coverage: true
-          generate-quality: false
-          generate-qodana-button: false
+          generate-quality: true
+          generate-qodana-button: true
         env:
           QODANA_OUTPUT: ${{ steps.qodana_scan.outputs.summary }}

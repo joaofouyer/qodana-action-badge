@@ -19,8 +19,10 @@ jobs:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
       - name: 'Generate Badge'
         uses: joaofouyer/qodana-action-badge@0.4.0
-        env:
+        with:
           qodana-output: ${{ steps.qodana_scan.outputs.summary }}
-          generate-coverage: 'true'
-          generate-quality: 'true'
-          generate-qodana-button: 'false'
+          generate-coverage: true
+          generate-quality: false
+          generate-qodana-button: false
+        env:
+          QODANA_OUTPUT: ${{ steps.qodana_scan.outputs.summary }}
